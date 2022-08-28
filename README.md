@@ -1,2 +1,2 @@
-# labour-exchange
+# Labour Exchange
 FastAPI's Backend for Labour Exchange.
