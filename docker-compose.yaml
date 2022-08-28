@@ -1,0 +1,16 @@
+version: "3.2"
+
+services:
+  db:
+    image: postgres:13
+    ports:
+      - 32700:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_USER: labourexchange
+      POSTGRES_PASSWORD: labourexchange
+      POSTGRES_NAME: labourexchange
+
+volumes:
+  postgres_data:
