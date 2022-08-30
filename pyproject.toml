@@ -10,6 +10,7 @@ fastapi = {extras = ["all"], version = "^0.81.0"}
 SQLAlchemy = "^1.4.40"
 databases = {extras = ["postgresql"], version = "^0.6.1"}
 psycopg2-binary = "^2.9.3"
+passlib = "^1.7.4"
 
 [tool.poetry.dev-dependencies]
 

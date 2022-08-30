@@ -1,11 +1,12 @@
+import uvicorn
 from imp import reload
 from fastapi import FastAPI
-import uvicorn
 
 from db.base import database
+from endpoints import users
 
-
-app = FastAPI()
+app = FastAPI(title="Exchange Labour")
+app.include_router(users.router, prefix="/users", tags=["users"])
 
 @app.get("/")
 async def root():
