@@ -31,7 +31,17 @@
    poetry install
    ```
 6. Установить Docker и docker-compose с [официального сайта](https://www.docker.com/products/docker-desktop)
-7. Запустить сервисы в Docker (PostgreSQL, Redis):
+7. Запустить сервисы в Docker (PostgreSQL):
    ```
-   docker-compose -f basic-compose.yml up -d --build --remove-orphans
+   sudo docker-compose -f docker-compose.yaml up -d --build --remove-orphans
+   ```
+8. При необходимости отключить PostgreSQL, включить Docker, отключить TCP-подключения к порту :8000 и повторить шаг №7:
+   ```
+   sudo service docker start
+   sudo service postgresql stop
+   sudo lsof -t -i tcp:8000 | xargs kill -9
+   ```
+9. Запустить приложение:
+   ```
+   python main.py
    ```

@@ -24,3 +24,11 @@ class UserIn(BaseModel):
             raise ValueError("Passwords don't match.")
         return value
 
+class UserOut(BaseModel):
+    id: Optional[int] = None
+    name: str
+    email: EmailStr
+    is_company: bool
+    created_date: datetime
+    changed_date: datetime
+
